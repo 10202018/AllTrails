@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5B78A8A1-E856-45DF-96DA-BEB09C5375BA"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFF11ACB-BAC2-4542-98BA-6206BF67200B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/PlacesList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EFF11ACB-BAC2-4542-98BA-6206BF67200B - f3e3e31596988fd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in GoogleMapsWithSwiftUISample.PlacesList.body.getter : some"
+                  moduleName = "GoogleMapsWithSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jahmorris-jones/Documents/dev/untitled/GoogleMapsWithSwiftUISample/GoogleMapsWithSwiftUISample/PlacesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "EFF11ACB-BAC2-4542-98BA-6206BF67200B - b009e7055c318784"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.GMSPlaceLikelihood) -&gt; GoogleMapsWithSwiftUISample.PlaceRow in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in GoogleMapsWithSwiftUISample.PlacesList.body.getter : some"
+                  moduleName = "GoogleMapsWithSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jahmorris-jones/Documents/dev/untitled/GoogleMapsWithSwiftUISample/GoogleMapsWithSwiftUISample/PlacesList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51B02DAE-0E5A-4306-B924-8BF4F874B822"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/RestaurantMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABB7E745-7445-4D6E-B978-683CCD5917AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/RestaurantMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEA15F3A-EE6C-4507-B4AE-7C510E5BB8D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/GoogleMapsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "makeUIView(context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7990896-0058-47C2-885E-8B315787EFC5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/GoogleMapsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "updateUIView(_:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B83F76A8-9D05-4792-8FE1-C62AA6E8841E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/RestaurantMapView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC0EC42A-0C7B-497C-86E1-25AB017F4C4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC982DC3-C2FB-4CAF-9187-A285EAE33945"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsWithSwiftUISample/NearbySearch/Views/NearbySearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AC982DC3-C2FB-4CAF-9187-A285EAE33945 - 5a9f13e004562299"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (GoogleMapsWithSwiftUISample.NearbySearchPlaces) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.Text, GoogleMapsWithSwiftUISample.RestaurantDetailView&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt;, GoogleMapsWithSwiftUISample.NearbySearchPlaces, SwiftUI.NavigationLink&lt;SwiftUI.Text, GoogleMapsWithSwiftUISample.RestaurantDetailView&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt;&gt;&gt; in GoogleMapsWithSwiftUISample.NearbySearchView.body.getter : some"
+                  moduleName = "GoogleMapsWithSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jahmorris-jones/Documents/dev/Companies/allTrails/GoogleMapsWithSwiftUISample/GoogleMapsWithSwiftUISample/NearbySearch/Views/NearbySearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "480">
+               </Location>
+               <Location
+                  uuid = "AC982DC3-C2FB-4CAF-9187-A285EAE33945 - 52d7638a68fc71ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; GoogleMapsWithSwiftUISample.RestaurantDetailView&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt; in closure #1 (GoogleMapsWithSwiftUISample.NearbySearchPlaces) -&gt; SwiftUI.NavigationLink&lt;SwiftUI.Text, GoogleMapsWithSwiftUISample.RestaurantDetailView&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt;, GoogleMapsWithSwiftUISample.NearbySearchPlaces, SwiftUI.NavigationLink&lt;SwiftUI.Text, GoogleMapsWithSwiftUISample.RestaurantDetailView&lt;GoogleMapsWithSwiftUISample.NearbySearchPlaces&gt;&gt;&gt; in GoogleMapsWithSwiftUISample.NearbySearchView.body.getter : some"
+                  moduleName = "GoogleMapsWithSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jahmorris-jones/Documents/dev/Companies/allTrails/GoogleMapsWithSwiftUISample/GoogleMapsWithSwiftUISample/NearbySearch/Views/NearbySearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
