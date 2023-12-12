@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 import GooglePlaces
 
@@ -36,18 +37,28 @@ struct RestaurantSearchView: View {
         .padding(.top, 50)
       ) {
         VStack(alignment: .center) {
-          TextField(
-            "Restaurant search text field",
-            text: $searchText,
-            prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical
-          )
-          .foregroundStyle(Color.gray)
-          .focused($focusedField, equals: .restaurantSearch)
-          .padding([.top, .bottom], 25)
-          .padding([.leading, .trailing], 25)
-          .frame(alignment: .center)
-          .lineLimit(10)
-          .font(.headline)
+          HStack {
+            Text(" --> ")
+              .padding(.leading, 15)
+              .padding(.bottom, 10)
+            
+            TextField(
+              "Restaurant search text field",
+              text: $searchText,
+              prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical
+            )
+            .foregroundStyle(Color.gray)
+            .focused($focusedField, equals: .restaurantSearch)
+            .padding(.top, 15)
+            .padding(.bottom, 25)
+            .padding(.leading, 10)
+            .padding(.trailing,25)
+            .frame(alignment: .center)
+            .lineLimit(10)
+            .font(.headline)
+          }
+          
+          
           
           Button("Search") {
             if !searchText.isEmpty {
