@@ -2,13 +2,13 @@ import Foundation
 import GoogleMaps
 
 class RestaurantSearchViewModel: ObservableObject {
-  // TODO: add all properties up top
   @Published var markers: [GMSMarker] = []
   @Published var places: [RestaurantSearchPlace] = []
   
+  private let apiKey = "AIzaSyDdzaiCLCaf_tiNEcoQSoJnb5hFZj6PUeY"
+
   func fetchRestaurants(_ textQuery: String) {
     let baseUrl = "https://places.googleapis.com/v1/places:searchText"
-    let apiKey = "AIzaSyDdzaiCLCaf_tiNEcoQSoJnb5hFZj6PUeY"
     
     let requestBody = RestaurantSearchRequestBody(textQuery: textQuery)
     
@@ -49,10 +49,6 @@ class RestaurantSearchViewModel: ObservableObject {
   }
 
   func fetchGeocodes() {
-    // TODO: make api key globally available
-    let apiKey = "AIzaSyDdzaiCLCaf_tiNEcoQSoJnb5hFZj6PUeY"
-    var placesWithCoordinates = [PlaceWithCoordinates]()
-    
     for place in places {
       let geocodingURL = URL(string: "https://maps.googleapis.com/maps/api/geocode/json?address=\(place.formattedAddress)&key=\(apiKey)")!
       
