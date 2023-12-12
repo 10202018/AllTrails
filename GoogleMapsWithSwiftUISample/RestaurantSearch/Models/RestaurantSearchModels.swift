@@ -25,6 +25,8 @@ struct RestaurantSearchPlace: Codable, Hashable, DetailRepresentable {
   let displayName: RestaurantSearchDisplayName
   let nationalPhoneNumber: String?
   let currentOpeningHours: RestaurantSearchCurrentOpeningHours?
+  var latitude: Double?
+  var longitude: Double?
 
   var name: String {
     displayName.text

@@ -7,61 +7,85 @@ struct RestaurantSearchView: View {
     case restaurantSearch
   }
   
-  @State private var searchText = ""
-  @StateObject private var viewModel = RestaurantSearchViewModel()
+  @State private var searchText: String
+  @StateObject private var restaurantSearchViewModel = RestaurantSearchViewModel()
+  
   @FocusState private var focusedField: Field?
   
+  init(searchText: String = "") {
+    self.searchText = searchText
+  }
+  
   var body: some View {
-    Section(header: VStack {
-      Text("Restaurant Search")
-        .font(.largeTitle)
-        .padding(.bottom, 3)
-      Text("Search for your favorite restaurants near you!")
-        .font(.caption2)
-    }
-      .listRowInsets(EdgeInsets(
-        top: 0,
-        leading: 0,
-        bottom: 0,
-        trailing: 0))
-    ) {
-      VStack(alignment: .center) {
-        TextField("Restaurant search text field", text: $searchText, prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical)
-          .focused($focusedField, equals: .restaurantSearch)
-          .padding([.top, .bottom], 25)
-          .frame(alignment: .center)
-          .lineLimit(10)
-        
-        Button("Search") {
-          if !searchText.isEmpty {
-            viewModel.fetchRestaurants(searchText)
+    NavigationStack {
+      Section(header: VStack {
+        Text("Restaurant Search")
+          .font(.largeTitle)
+          .bold()
+          .padding(.bottom, 3)
+        Text("Search for your favorite restaurants near you!")
+          .font(.caption2)
+      }
+        .padding(.top, 50)
+      ) {
+        VStack(alignment: .center) {
+          TextField("Restaurant search text field", text: $searchText, prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical)
+            .focused($focusedField, equals: .restaurantSearch)
+            .padding([.top, .bottom], 25)
+            .frame(alignment: .center)
+            .lineLimit(10)
+          
+          Button("Search") {
+            if !searchText.isEmpty {
+              restaurantSearchViewModel.fetchRestaurants(searchText)
+            }
           }
-        }
-        .padding()
-        
-        Spacer()
-        
-        NavigationStack {
-          List {
-            ForEach(viewModel.places, id: \.self) { restaurant in
-              NavigationLink {
-                RestaurantDetailView(restaurant: restaurant)
-              } label: {
-                Text(restaurant.displayName.text)
+          .padding()
+          
+          Spacer()
+          
+          NavigationStack {
+            List {
+              ForEach(restaurantSearchViewModel.places, id: \.self) { restaurant in
+                NavigationLink {
+                  RestaurantDetailView(restaurant: restaurant)
+                } label: {
+                  Text(restaurant.displayName.text)
+                }
               }
             }
           }
         }
-      }
-      .toolbar {
-        ToolbarItem(placement: .keyboard) {
-          Button("Done") {
-            focusedField = nil
+        .onAppear(perform: {
+          restaurantSearchViewModel.fetchRestaurants(searchText)
+        })
+        .toolbar {
+          ToolbarItem(placement: .keyboard) {
+            Button("Done") {
+              focusedField = nil
+            }
           }
         }
+        
       }
+      .headerProminence(.increased)
       
+      HStack {
+        NavigationLink(destination: RestaurantMapView(restaurantSearchViewModel: restaurantSearchViewModel), label: {
+          Image(systemName: "magnifyingglass.circle.fill")
+//            .onTapGesture {
+//              geocodingSearchViewModel.fetchGeocodes(of: restaurantSearchViewModel.places)
+//            }
+        })
+        .font(.title)
+        .padding(.bottom, 20)
+        
+        NavigationLink(destination: Text("Placeholder GeocodedMapView"), label: {
+          Image(systemName: "magnifyingglass.circle")
+        })
+        .font(.title)
+        .padding(.bottom, 20)
+      }
     }
-    .headerProminence(.increased)
   }
 }

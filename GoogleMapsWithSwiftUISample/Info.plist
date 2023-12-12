@@ -21,7 +21,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To See the world</string>
+	<string>Requesting to find restaurants near you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Requesting to find restaurants near you</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Requesting to find restaurants near you</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Requesting to find restaurants near you</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

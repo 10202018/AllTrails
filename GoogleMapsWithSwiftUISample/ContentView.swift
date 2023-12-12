@@ -2,31 +2,36 @@ import GoogleMaps
 import SwiftUI
 
 struct ContentView: View {
-  @State private var searchText = ""
-  @StateObject var viewModel = NearbySearchViewModel()
+  @State private var searchText = "Restaurants near me"
+  @ObservedObject var locationManager = LocationManager()
+//  @StateObject var viewModel = NearbySearchViewModel()
   
   // TODO: Make orientation only portrait-mode
   var body: some View {
+//    MapViewControllerBridge()
+    
     NavigationStack {
       GeometryReader(content: { geometry in
         VStack {
-          NearbySearchView(viewModel: viewModel)
-          .frame(height: geometry.size.height / 1.1, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-          
-          Spacer()
-          
-          NavigationLink(destination: RestaurantSearchView(), label: {
-            Image(systemName: "magnifyingglass.circle.fill")
-          })
-          .font(.title)
-          .padding(.bottom, 20)
+          RestaurantSearchView(searchText: searchText)
+//          NearbySearchView(viewModel: viewModel)
+//          .frame(height: geometry.size.height / 1.1, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//          
+//          Spacer()
+//          
+//          NavigationLink(destination: RestaurantSearchView(), label: {
+//            Image(systemName: "magnifyingglass.circle.fill")
+//          })
+//          .font(.title)
+//          .padding(.bottom, 20)
         }
-        .navigationTitle("Top-Rated Places")
+//        .navigationTitle("Restaurant Search")
       })
     }
-    .onAppear(perform: {
-      viewModel.getNearbyPlaces()
-    })
+    // TODO: Remove connection between ContentView and specific ViewModel
+    .onAppear {
+      locationManager.requestLocationPermissions()
+    }
   }
   
   struct ContentView_Previews: PreviewProvider {
