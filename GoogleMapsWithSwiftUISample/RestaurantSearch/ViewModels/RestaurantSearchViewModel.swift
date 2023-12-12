@@ -1,7 +1,7 @@
 import Foundation
 import GoogleMaps
 
-/// Presentation logic for the view of Restaurant search queries
+/// Presentation logic for the view of Restaurant search queries.
 class RestaurantSearchViewModel: ObservableObject {
   /// Change-announcing representation for single locations on the map.
   @Published var markers: [GMSMarker] = []

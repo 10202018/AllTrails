@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1312892B285879002561B0 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1312882B285879002561B0 /* VisualEffectBlur.swift */; };
 		5B1F86D82B2227DB006325D2 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F86D72B2227DB006325D2 /* RestaurantDetailView.swift */; };
 		5B1F86DA2B22301D006325D2 /* DetailRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F86D92B22301D006325D2 /* DetailRepresentable.swift */; };
 		5B344A092B282201001967FE /* GeocodingSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B344A082B282201001967FE /* GeocodingSearchModels.swift */; };
 		5B344A0E2B282E93001967FE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B344A0D2B282E93001967FE /* LocationManager.swift */; };
 		5B5C2DFC2B1AFAC600AF0B9D /* RestaurantSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5C2DFB2B1AFAC600AF0B9D /* RestaurantSearchView.swift */; };
 		5B8BBD382B21486B0074D1AA /* RestaurantSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BBD372B21486A0074D1AA /* RestaurantSearchViewModel.swift */; };
+		5BEDE2862B286CEF0053E070 /* FullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDE2852B286CEF0053E070 /* FullListView.swift */; };
 		5BEE605E2B22869A00AED72C /* MapViewControllerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */; };
 		5BEE605F2B22869A00AED72C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE605D2B22869A00AED72C /* MapViewController.swift */; };
 		5BEE60652B228AF500AED72C /* RestaurantSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE60642B228AF500AED72C /* RestaurantSearchModels.swift */; };
@@ -40,12 +42,14 @@
 
 /* Begin PBXFileReference section */
 		4262FBFAB8EF4308C90819D7 /* Pods-GoogleMapsWithSwiftUISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsWithSwiftUISample.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsWithSwiftUISample/Pods-GoogleMapsWithSwiftUISample.debug.xcconfig"; sourceTree = "<group>"; };
+		5B1312882B285879002561B0 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		5B1F86D72B2227DB006325D2 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		5B1F86D92B22301D006325D2 /* DetailRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepresentable.swift; sourceTree = "<group>"; };
 		5B344A082B282201001967FE /* GeocodingSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingSearchModels.swift; sourceTree = "<group>"; };
 		5B344A0D2B282E93001967FE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5B5C2DFB2B1AFAC600AF0B9D /* RestaurantSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchView.swift; sourceTree = "<group>"; };
 		5B8BBD372B21486A0074D1AA /* RestaurantSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchViewModel.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		5BEDE2852B286CEF0053E070 /* FullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullListView.swift; sourceTree = "<group>"; };
 		5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
 		5BEE605D2B22869A00AED72C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5BEE60642B228AF500AED72C /* RestaurantSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchModels.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B13128A2B2860C9002561B0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */,
+				5BEE60772B27A98E00AED72C /* RestaurantListForMapView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5B1F86DB2B226B92006325D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,8 +144,8 @@
 		5B344A0A2B282690001967FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5B13128A2B2860C9002561B0 /* Components */,
 				5BEE60752B27A8DF00AED72C /* RestaurantMapView.swift */,
-				5BEE60772B27A98E00AED72C /* RestaurantListForMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				5BEE605D2B22869A00AED72C /* MapViewController.swift */,
-				5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */,
 			);
 			path = ViewRepresentation;
 			sourceTree = "<group>";
@@ -206,6 +218,8 @@
 				5E82F2292443751E0001DD0B /* LaunchScreen.storyboard */,
 				5E82F22C2443751E0001DD0B /* Info.plist */,
 				5E82F2262443751E0001DD0B /* Preview Content */,
+				5B1312882B285879002561B0 /* VisualEffectBlur.swift */,
+				5BEDE2852B286CEF0053E070 /* FullListView.swift */,
 			);
 			path = GoogleMapsWithSwiftUISample;
 			sourceTree = "<group>";
@@ -381,12 +395,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B1312892B285879002561B0 /* VisualEffectBlur.swift in Sources */,
 				5BEE605E2B22869A00AED72C /* MapViewControllerBridge.swift in Sources */,
 				5B344A092B282201001967FE /* GeocodingSearchModels.swift in Sources */,
 				5B1F86DA2B22301D006325D2 /* DetailRepresentable.swift in Sources */,
 				5B5C2DFC2B1AFAC600AF0B9D /* RestaurantSearchView.swift in Sources */,
 				5BEE60762B27A8DF00AED72C /* RestaurantMapView.swift in Sources */,
 				5BEE60652B228AF500AED72C /* RestaurantSearchModels.swift in Sources */,
+				5BEDE2862B286CEF0053E070 /* FullListView.swift in Sources */,
 				5E82F21F2443751B0001DD0B /* AppDelegate.swift in Sources */,
 				5E82F2212443751B0001DD0B /* SceneDelegate.swift in Sources */,
 				5B8BBD382B21486B0074D1AA /* RestaurantSearchViewModel.swift in Sources */,

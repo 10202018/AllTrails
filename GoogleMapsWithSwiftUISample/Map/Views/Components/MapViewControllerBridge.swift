@@ -37,7 +37,7 @@ struct MapViewControllerBridge: UIViewControllerRepresentable {
         map.selectedMarker = selectedMarker
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
           map.animate(toZoom: 13)
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             map.animate(
               with: GMSCameraUpdate.setTarget(selectedMarker.position)
             )

@@ -24,7 +24,7 @@ struct RestaurantDetailView<T: DetailRepresentable>: View {
       .padding(.bottom, 30)
       
       Text("Hours of Operation")
-        .font(.title3)
+        .font(.title2)
       
       ForEach(restaurant.openingHours, id: \.self) { dayHours in
         Text(dayHours)
@@ -39,5 +39,3 @@ struct RestaurantDetailView<T: DetailRepresentable>: View {
     .textSelection(.enabled)
   }
 }
-
-// TODO: Format lines (ie: hg fixdot --no-amend)

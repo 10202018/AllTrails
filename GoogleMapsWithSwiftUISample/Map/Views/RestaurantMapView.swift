@@ -10,12 +10,14 @@ struct RestaurantMapView: View {
   
   var body: some View {
     
-    let scrollViewHeight: CGFloat = 80
+    let scrollViewHeight: CGFloat = 180
     
     GeometryReader { geometry in
       ZStack {
         let diameter = zoomInCenter ? geometry.size.width : (geometry.size.height * 2)
+        // Map
         MapViewControllerBridge(restaurantSearchViewModel: restaurantSearchViewModel, selectedMarker: $selectedMarker)
+          .ignoresSafeArea()
           .clipShape(
             Circle()
               .size(
@@ -32,6 +34,7 @@ struct RestaurantMapView: View {
           .animation(.easeIn)
           .background(Color(red: 254.0/255.0, green: 1, blue: 220.0/255.0))
         
+        // List
         RestaurantListForMapView(restaurantSearchViewModel: restaurantSearchViewModel, buttonAction: { marker in
           guard self.selectedMarker != marker else { return }
           self.selectedMarker = marker
@@ -41,7 +44,7 @@ struct RestaurantMapView: View {
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .offset(
           x: 0,
-          y: geometry.size.height - (expandList ? scrollViewHeight + 150 : scrollViewHeight)
+          y: geometry.size.height - (expandList ? scrollViewHeight + 350 : scrollViewHeight)
         )
         .offset(x: 0, y: self.yDragTranslation)
         .animation(.spring())
@@ -49,7 +52,7 @@ struct RestaurantMapView: View {
           DragGesture().onChanged { value in
             self.yDragTranslation = value.translation.height
           }.onEnded { value in
-            self.expandList = (value.translation.height < -120)
+            self.expandList = (value.translation.height < 720)
             self.yDragTranslation = 0
           }
         )
