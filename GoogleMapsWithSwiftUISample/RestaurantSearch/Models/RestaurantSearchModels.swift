@@ -18,8 +18,7 @@ struct RestaurantSearchResponse: Hashable, Codable  {
   }
 }
 
-// TODO: Use `name` property instead of displayName
-// TODO: See if you can delete the lower-level structs not being used after using the `name` property
+/// A model representing places used for viewing on map.
 struct RestaurantSearchPlace: Codable, Hashable, DetailRepresentable {
   let formattedAddress: String
   let displayName: RestaurantSearchDisplayName

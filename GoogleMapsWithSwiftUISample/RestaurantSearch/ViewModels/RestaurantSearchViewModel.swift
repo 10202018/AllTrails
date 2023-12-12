@@ -1,12 +1,18 @@
 import Foundation
 import GoogleMaps
 
+/// Presentation logic for the view of Restaurant search queries
 class RestaurantSearchViewModel: ObservableObject {
+  /// Change-announcing representation for single locations on the map.
   @Published var markers: [GMSMarker] = []
+  
   @Published var places: [RestaurantSearchPlace] = []
   
   private let apiKey = "AIzaSyDdzaiCLCaf_tiNEcoQSoJnb5hFZj6PUeY"
 
+  /// Fetches list of restaurants via Google Places API.
+  ///
+  /// Parameter: `textQuery` - value passed from search text field
   func fetchRestaurants(_ textQuery: String) {
     let baseUrl = "https://places.googleapis.com/v1/places:searchText"
     
@@ -48,6 +54,7 @@ class RestaurantSearchViewModel: ObservableObject {
     restaurantSearchTask.resume()
   }
 
+  /// Fetches forward-geocodes via call to Google Maps API.
   func fetchGeocodes() {
     for place in places {
       let geocodingURL = URL(string: "https://maps.googleapis.com/maps/api/geocode/json?address=\(place.formattedAddress)&key=\(apiKey)")!
@@ -65,7 +72,7 @@ class RestaurantSearchViewModel: ObservableObject {
         
         do {
           let jsonDecoder = JSONDecoder()
-          let geocodingResponse = try jsonDecoder.decode(GeoCodingResponse.self, from: data)
+          let geocodingResponse = try jsonDecoder.decode(GeocodingResponse.self, from: data)
           
           for result in geocodingResponse.results {
             let coordinate = result.geometry.location
@@ -98,5 +105,4 @@ class RestaurantSearchViewModel: ObservableObject {
       }
       self.markers = updatedMarkers
   }
-  
 }

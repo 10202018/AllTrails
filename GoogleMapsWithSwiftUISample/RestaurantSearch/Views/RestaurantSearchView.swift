@@ -1,7 +1,7 @@
 import SwiftUI
 import GooglePlaces
-import GoogleMaps
 
+/// The view for Restaurant search queries.
 struct RestaurantSearchView: View {
   private enum Field: Int, CaseIterable {
     case restaurantSearch
@@ -10,6 +10,7 @@ struct RestaurantSearchView: View {
   @State private var searchText: String
   @StateObject private var restaurantSearchViewModel = RestaurantSearchViewModel()
   
+  /// Tracks which part of the layout should be receiving user input.
   @FocusState private var focusedField: Field?
   
   init(searchText: String = "") {
@@ -26,7 +27,7 @@ struct RestaurantSearchView: View {
         Text("Search for your favorite restaurants near you!")
           .font(.caption2)
       }
-        .padding(.top, 50)
+      .padding(.top, 50)
       ) {
         VStack(alignment: .center) {
           TextField("Restaurant search text field", text: $searchText, prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical)
@@ -73,9 +74,6 @@ struct RestaurantSearchView: View {
       HStack {
         NavigationLink(destination: RestaurantMapView(restaurantSearchViewModel: restaurantSearchViewModel), label: {
           Image(systemName: "magnifyingglass.circle.fill")
-//            .onTapGesture {
-//              geocodingSearchViewModel.fetchGeocodes(of: restaurantSearchViewModel.places)
-//            }
         })
         .font(.title)
         .padding(.bottom, 20)

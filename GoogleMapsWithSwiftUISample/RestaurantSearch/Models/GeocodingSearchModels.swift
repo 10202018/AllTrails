@@ -1,26 +1,7 @@
 import Foundation
 
-// MARK: GeoCoding NearbyPlace
-struct NearbyPlace: Codable {
-  var name: String
-  var placeId: String
-  var geometry: Geometry
-  var vicinity: String?
-  var latitude: Double?
-  var longitude: Double?
-}
-
-struct Geometry: Codable {
-  var location: GeoCoordinate
-}
-
-struct GeoCoordinate: Codable {
-  var lat: Double
-  var lng: Double
-}
-
 // MARK: GeoCoding Response
-struct GeoCodingResponse: Codable {
+struct GeocodingResponse: Codable {
   let results: [Result]
   let status: String
 }
@@ -30,7 +11,6 @@ struct Result: Codable {
   let formattedAddress: String
   let geometry: ResultGeometry
   let placeID: String
-//  let plusCode: PlusCode
   let types: [String]
   
   enum CodingKeys: String, CodingKey {
@@ -38,7 +18,6 @@ struct Result: Codable {
     case formattedAddress = "formatted_address"
     case geometry
     case placeID = "place_id"
-//    case plusCode = "plus_code"
     case types
   }
 }
@@ -72,13 +51,4 @@ struct Location: Codable {
 
 struct Viewport: Codable {
   let northeast, southwest: Location
-}
-
-struct PlusCode: Codable {
-  let compoundCode, globalCode: String
-  
-  enum CodingKeys: String, CodingKey {
-    case compoundCode = "compound_code"
-    case globalCode = "global_code"
-  }
 }
