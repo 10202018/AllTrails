@@ -9,7 +9,9 @@ struct RestaurantSearchRequestBody: Codable {
 struct RestaurantSearchResponse: Hashable, Codable  {
   var places: [RestaurantSearchPlace]
   
-  static func == (lhs: RestaurantSearchResponse, rhs: RestaurantSearchResponse) -> Bool {
+  static func == (lhs: RestaurantSearchResponse, rhs: RestaurantSearchResponse)
+      -> Bool
+  {
     lhs.places == rhs.places
   }
   
@@ -39,7 +41,9 @@ struct RestaurantSearchPlace: Codable, Hashable, DetailRepresentable {
     return currentOpeningHours?.weekdayDescriptions ?? [""]
   }
   
-  static func == (lhs: RestaurantSearchPlace, rhs: RestaurantSearchPlace) -> Bool {
+  static func == (lhs: RestaurantSearchPlace, rhs: RestaurantSearchPlace)
+  -> Bool
+  {
     lhs.formattedAddress == rhs.formattedAddress
   }
   

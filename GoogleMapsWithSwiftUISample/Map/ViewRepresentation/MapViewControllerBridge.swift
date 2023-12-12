@@ -17,7 +17,10 @@ struct MapViewControllerBridge: UIViewControllerRepresentable {
       return MapViewController()
   }
 
-  func updateUIViewController(_ uiViewController: MapViewController, context: Context) {
+  func updateUIViewController(
+    _ uiViewController: MapViewController,
+    context: Context
+  ) {
     restaurantSearchViewModel.markers.forEach { $0.map = uiViewController.map }
     
     selectedMarker?.map = uiViewController.map
@@ -35,7 +38,9 @@ struct MapViewControllerBridge: UIViewControllerRepresentable {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
           map.animate(toZoom: 13)
           DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            map.animate(with: GMSCameraUpdate.setTarget(selectedMarker.position))
+            map.animate(
+              with: GMSCameraUpdate.setTarget(selectedMarker.position)
+            )
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
               map.animate(toZoom: 14)
             })

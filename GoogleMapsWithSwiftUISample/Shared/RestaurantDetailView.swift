@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// A shared view for the presentation of restaurant details used by concrete types conforming to `DetailRepresentable`.
+/// A shared view for the presentation of restaurant details used by concrete types conforming to
+/// `DetailRepresentable`.
 struct RestaurantDetailView<T: DetailRepresentable>: View {
   let restaurant: T
   
@@ -15,9 +16,12 @@ struct RestaurantDetailView<T: DetailRepresentable>: View {
       Text(restaurant.formattedAddress)
         .font(.title2)
 
-      Link(restaurant.phoneNumber, destination: URL(string: "tel:\(restaurant.phoneNumber)")!)
-        .font(.title2)
-        .padding(.bottom, 30)
+      Link(
+        restaurant.phoneNumber,
+        destination: URL(string: "tel:\(restaurant.phoneNumber)")!
+      )
+      .font(.title2)
+      .padding(.bottom, 30)
       
       Text("Hours of Operation")
         .font(.title3)

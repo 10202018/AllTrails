@@ -40,12 +40,12 @@
 
 /* Begin PBXFileReference section */
 		4262FBFAB8EF4308C90819D7 /* Pods-GoogleMapsWithSwiftUISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapsWithSwiftUISample.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapsWithSwiftUISample/Pods-GoogleMapsWithSwiftUISample.debug.xcconfig"; sourceTree = "<group>"; };
-		5B1F86D72B2227DB006325D2 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		5B1F86D72B2227DB006325D2 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		5B1F86D92B22301D006325D2 /* DetailRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepresentable.swift; sourceTree = "<group>"; };
 		5B344A082B282201001967FE /* GeocodingSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingSearchModels.swift; sourceTree = "<group>"; };
 		5B344A0D2B282E93001967FE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5B5C2DFB2B1AFAC600AF0B9D /* RestaurantSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchView.swift; sourceTree = "<group>"; };
-		5B8BBD372B21486A0074D1AA /* RestaurantSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchViewModel.swift; sourceTree = "<group>"; };
+		5B8BBD372B21486A0074D1AA /* RestaurantSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchViewModel.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewControllerBridge.swift; sourceTree = "<group>"; };
 		5BEE605D2B22869A00AED72C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5BEE60642B228AF500AED72C /* RestaurantSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchModels.swift; sourceTree = "<group>"; };

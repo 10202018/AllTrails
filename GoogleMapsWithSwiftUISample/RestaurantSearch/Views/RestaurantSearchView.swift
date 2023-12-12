@@ -8,7 +8,8 @@ struct RestaurantSearchView: View {
   }
   
   @State private var searchText: String
-  @StateObject private var restaurantSearchViewModel = RestaurantSearchViewModel()
+  @StateObject private var restaurantSearchViewModel =
+    RestaurantSearchViewModel()
   
   /// Tracks which part of the layout should be receiving user input.
   @FocusState private var focusedField: Field?
@@ -30,11 +31,15 @@ struct RestaurantSearchView: View {
       .padding(.top, 50)
       ) {
         VStack(alignment: .center) {
-          TextField("Restaurant search text field", text: $searchText, prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical)
-            .focused($focusedField, equals: .restaurantSearch)
-            .padding([.top, .bottom], 25)
-            .frame(alignment: .center)
-            .lineLimit(10)
+          TextField(
+            "Restaurant search text field",
+            text: $searchText,
+            prompt: Text("Ex: 'Gracias Madre', or 'Places near Melrose Ave.'"), axis: .vertical
+          )
+          .focused($focusedField, equals: .restaurantSearch)
+          .padding([.top, .bottom], 25)
+          .frame(alignment: .center)
+          .lineLimit(10)
           
           Button("Search") {
             if !searchText.isEmpty {
@@ -47,7 +52,8 @@ struct RestaurantSearchView: View {
           
           NavigationStack {
             List {
-              ForEach(restaurantSearchViewModel.places, id: \.self) { restaurant in
+              ForEach(restaurantSearchViewModel.places, id: \.self) {
+                  restaurant in
                 NavigationLink {
                   RestaurantDetailView(restaurant: restaurant)
                 } label: {
