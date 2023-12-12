@@ -24,7 +24,3 @@ struct FullListView: View {
     }
   }
 }
-  
-  #Preview {
-    FullListView(viewModel: RestaurantSearchViewModel())
-  }

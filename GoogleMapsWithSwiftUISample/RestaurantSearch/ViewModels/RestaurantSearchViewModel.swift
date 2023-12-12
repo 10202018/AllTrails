@@ -2,12 +2,10 @@ import Foundation
 import GoogleMaps
 
 /// Presentation logic for the view of Restaurant search queries.
-class RestaurantSearchViewModel: ObservableObject {
-  /// Change-announcing representation for single locations on the map.
+final class RestaurantSearchViewModel: ObservableObject {
+  /// Change-announcing representation of single locations on the map.
   @Published var markers: [GMSMarker] = []
-  
   @Published var places: [RestaurantSearchPlace] = []
-  
   private let apiKey = "AIzaSyDdzaiCLCaf_tiNEcoQSoJnb5hFZj6PUeY"
   
   /// Fetches list of restaurants via Google Places API.

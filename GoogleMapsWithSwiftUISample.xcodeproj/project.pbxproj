@@ -166,6 +166,14 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		5B9B06142B28A23300A50533 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B1312882B285879002561B0 /* VisualEffectBlur.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5BEE60702B229A2F00AED72C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,18 +216,18 @@
 		5E82F21D2443751B0001DD0B /* GoogleMapsWithSwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
+				5B9B06142B28A23300A50533 /* Helpers */,
 				5BEE60742B27A8A900AED72C /* Map */,
 				5BEE60702B229A2F00AED72C /* Shared */,
 				5B1F86DE2B226CC3006325D2 /* RestaurantSearch */,
 				5E82F21E2443751B0001DD0B /* AppDelegate.swift */,
+				5BEDE2852B286CEF0053E070 /* FullListView.swift */,
 				5E82F2202443751B0001DD0B /* SceneDelegate.swift */,
 				5E82F2222443751B0001DD0B /* ContentView.swift */,
 				5E82F2242443751E0001DD0B /* Assets.xcassets */,
 				5E82F2292443751E0001DD0B /* LaunchScreen.storyboard */,
 				5E82F22C2443751E0001DD0B /* Info.plist */,
 				5E82F2262443751E0001DD0B /* Preview Content */,
-				5B1312882B285879002561B0 /* VisualEffectBlur.swift */,
-				5BEDE2852B286CEF0053E070 /* FullListView.swift */,
 			);
 			path = GoogleMapsWithSwiftUISample;
 			sourceTree = "<group>";

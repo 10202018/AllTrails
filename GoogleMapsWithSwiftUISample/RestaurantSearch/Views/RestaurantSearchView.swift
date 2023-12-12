@@ -9,11 +9,10 @@ struct RestaurantSearchView: View {
   
   @State private var searchText: String
   @StateObject private var restaurantSearchViewModel =
-    RestaurantSearchViewModel()
+  RestaurantSearchViewModel()
   
   /// Tracks which part of the layout should be receiving user input.
   @FocusState private var focusedField: Field?
-  
   @State private var rotationAngle = 0.0
   
   init(searchText: String = "") {
@@ -34,7 +33,7 @@ struct RestaurantSearchView: View {
         Text("Search for your favorite restaurants near you!")
           .font(.caption2)
       }
-      .padding(.top, 50)
+        .padding(.top, 50)
       ) {
         VStack(alignment: .center) {
           TextField(
@@ -65,16 +64,16 @@ struct RestaurantSearchView: View {
           
           Spacer()
           
-            NavigationStack {
-              List {
-                ForEach(restaurantSearchViewModel.places, id: \.self) {
-                    restaurant in
-                  NavigationLink {
-                    RestaurantDetailView(restaurant: restaurant)
-                  } label: {
-                    Text(restaurant.displayName.text)
-                  }
+          NavigationStack {
+            List {
+              ForEach(restaurantSearchViewModel.places, id: \.self) {
+                restaurant in
+                NavigationLink {
+                  RestaurantDetailView(restaurant: restaurant)
+                } label: {
+                  Text(restaurant.displayName.text)
                 }
+              }
             }
             .tint(Color.gray)
             .listStyle(GroupedListStyle())
@@ -131,7 +130,7 @@ struct RestaurantSearchView: View {
     .background()
     .cornerRadius(16.0)
   }
-
+  
   func animateRestaurantSearchCard(_ duration: Double) {
     withAnimation(.easeInOut(duration: duration)) {
       self.rotationAngle = 360

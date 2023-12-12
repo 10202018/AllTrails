@@ -2,7 +2,7 @@ import Foundation
 import GoogleMaps
 
 /// Manager for user's current-location and location-permissions.
-class LocationManager: NSObject, ObservableObject {
+final class LocationManager: NSObject, ObservableObject {
   private var locationManager = CLLocationManager()
   
   @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined {
