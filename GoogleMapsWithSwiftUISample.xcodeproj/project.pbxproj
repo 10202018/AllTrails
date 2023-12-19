@@ -148,13 +148,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5B3A11662B31E74D00B32268 /* GoogleMapsWithSwiftUISampleModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GoogleMapsWithSwiftUISampleModel;
-			sourceTree = "<group>";
-		};
 		5B3A11672B31E82800B32268 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +186,6 @@
 		5E82F2122443751B0001DD0B = {
 			isa = PBXGroup;
 			children = (
-				5B3A11662B31E74D00B32268 /* GoogleMapsWithSwiftUISampleModel */,
 				5E82F21D2443751B0001DD0B /* GoogleMapsWithSwiftUISample */,
 				5E82F2342443751E0001DD0B /* GoogleMapsWithSwiftUISampleTests */,
 				5E82F21C2443751B0001DD0B /* Products */,
