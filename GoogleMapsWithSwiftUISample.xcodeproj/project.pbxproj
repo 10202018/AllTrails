@@ -100,70 +100,86 @@
 		5B13128A2B2860C9002561B0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */,
 				5BEE60772B27A98E00AED72C /* RestaurantListForMapView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		5B1F86DB2B226B92006325D2 /* Views */ = {
+		5B344A0B2B28279B001967FE /* ViewRepresentation */ = {
 			isa = PBXGroup;
 			children = (
+				5BEE605C2B22869A00AED72C /* MapViewControllerBridge.swift */,
+				5BEE605D2B22869A00AED72C /* MapViewController.swift */,
+			);
+			path = ViewRepresentation;
+			sourceTree = "<group>";
+		};
+		5B3A11632B31E29B00B32268 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5E82F21E2443751B0001DD0B /* AppDelegate.swift */,
+				5E82F2202443751B0001DD0B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5B3A11642B31E58200B32268 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5E82F2242443751E0001DD0B /* Assets.xcassets */,
+				5E82F2292443751E0001DD0B /* LaunchScreen.storyboard */,
+				5E82F22C2443751E0001DD0B /* Info.plist */,
+				5E82F2262443751E0001DD0B /* Preview Content */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B3A11652B31E60900B32268 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B9B06142B28A23300A50533 /* Helpers */,
+				5B13128A2B2860C9002561B0 /* Components */,
+				5B1F86D72B2227DB006325D2 /* RestaurantDetailView.swift */,
+				5BEE60752B27A8DF00AED72C /* RestaurantMapView.swift */,
 				5B5C2DFB2B1AFAC600AF0B9D /* RestaurantSearchView.swift */,
+				5BEDE2852B286CEF0053E070 /* FullListView.swift */,
+				5E82F2222443751B0001DD0B /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5B1F86DC2B226B9A006325D2 /* ViewModels */ = {
+		5B3A11662B31E74D00B32268 /* GoogleMapsWithSwiftUISampleModel */ = {
 			isa = PBXGroup;
 			children = (
-				5B8BBD372B21486A0074D1AA /* RestaurantSearchViewModel.swift */,
 			);
-			path = ViewModels;
+			path = GoogleMapsWithSwiftUISampleModel;
 			sourceTree = "<group>";
 		};
-		5B1F86DD2B226BA4006325D2 /* Models */ = {
+		5B3A11672B31E82800B32268 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B344A0D2B282E93001967FE /* LocationManager.swift */,
 				5BEE60642B228AF500AED72C /* RestaurantSearchModels.swift */,
 				5B344A082B282201001967FE /* GeocodingSearchModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5B1F86DE2B226CC3006325D2 /* RestaurantSearch */ = {
+		5B3A11682B31E84900B32268 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5B1F86DB2B226B92006325D2 /* Views */,
-				5B1F86DC2B226B9A006325D2 /* ViewModels */,
-				5B1F86DD2B226BA4006325D2 /* Models */,
+				5B344A0B2B28279B001967FE /* ViewRepresentation */,
+				5B8BBD372B21486A0074D1AA /* RestaurantSearchViewModel.swift */,
 			);
-			path = RestaurantSearch;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		5B344A0A2B282690001967FE /* Views */ = {
+		5B3A11692B31E87700B32268 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				5B13128A2B2860C9002561B0 /* Components */,
-				5BEE60752B27A8DF00AED72C /* RestaurantMapView.swift */,
+				5B1F86D92B22301D006325D2 /* DetailRepresentable.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5B344A0B2B28279B001967FE /* ViewRepresentation */ = {
-			isa = PBXGroup;
-			children = (
-				5BEE605D2B22869A00AED72C /* MapViewController.swift */,
-			);
-			path = ViewRepresentation;
-			sourceTree = "<group>";
-		};
-		5B344A0C2B282E71001967FE /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				5B344A0D2B282E93001967FE /* LocationManager.swift */,
-			);
-			path = Location;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		5B9B06142B28A23300A50533 /* Helpers */ = {
@@ -174,28 +190,10 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		5BEE60702B229A2F00AED72C /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				5B1F86D72B2227DB006325D2 /* RestaurantDetailView.swift */,
-				5B1F86D92B22301D006325D2 /* DetailRepresentable.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		5BEE60742B27A8A900AED72C /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				5B344A0C2B282E71001967FE /* Location */,
-				5B344A0B2B28279B001967FE /* ViewRepresentation */,
-				5B344A0A2B282690001967FE /* Views */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		5E82F2122443751B0001DD0B = {
 			isa = PBXGroup;
 			children = (
+				5B3A11662B31E74D00B32268 /* GoogleMapsWithSwiftUISampleModel */,
 				5E82F21D2443751B0001DD0B /* GoogleMapsWithSwiftUISample */,
 				5E82F2342443751E0001DD0B /* GoogleMapsWithSwiftUISampleTests */,
 				5E82F21C2443751B0001DD0B /* Products */,
@@ -216,18 +214,12 @@
 		5E82F21D2443751B0001DD0B /* GoogleMapsWithSwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
-				5B9B06142B28A23300A50533 /* Helpers */,
-				5BEE60742B27A8A900AED72C /* Map */,
-				5BEE60702B229A2F00AED72C /* Shared */,
-				5B1F86DE2B226CC3006325D2 /* RestaurantSearch */,
-				5E82F21E2443751B0001DD0B /* AppDelegate.swift */,
-				5BEDE2852B286CEF0053E070 /* FullListView.swift */,
-				5E82F2202443751B0001DD0B /* SceneDelegate.swift */,
-				5E82F2222443751B0001DD0B /* ContentView.swift */,
-				5E82F2242443751E0001DD0B /* Assets.xcassets */,
-				5E82F2292443751E0001DD0B /* LaunchScreen.storyboard */,
-				5E82F22C2443751E0001DD0B /* Info.plist */,
-				5E82F2262443751E0001DD0B /* Preview Content */,
+				5B3A11632B31E29B00B32268 /* App */,
+				5B3A11672B31E82800B32268 /* Models */,
+				5B3A11652B31E60900B32268 /* Views */,
+				5B3A11682B31E84900B32268 /* ViewModels */,
+				5B3A11692B31E87700B32268 /* Protocols */,
+				5B3A11642B31E58200B32268 /* Supporting Files */,
 			);
 			path = GoogleMapsWithSwiftUISample;
 			sourceTree = "<group>";

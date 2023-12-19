@@ -58,8 +58,6 @@ struct RestaurantSearchView: View {
             .font(.headline)
           }
           
-          
-          
           Button("Search") {
             if !searchText.isEmpty {
               self.rotationAngle += 180
@@ -90,9 +88,9 @@ struct RestaurantSearchView: View {
             .listStyle(GroupedListStyle())
             .background(
               RoundedRectangle(cornerRadius: 30)
-              // Used to redraw the line
+                // Used to redraw the line
                 .stroke(Color.white.opacity(0.5))
-              // Added modifiers after the re-draw (above)
+                // Added modifiers after the re-draw (above)
                 .background(Color.white.opacity(0.5))
                 .background(VisualEffectBlur(blurStyle: .systemThinMaterialDark))
                 .shadow(color: Color.blue.opacity(0.5), radius: 60, x: 0, y: 0)
