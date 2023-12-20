@@ -10,7 +10,7 @@ struct MapViewControllerBridge: UIViewControllerRepresentable {
   @ObservedObject var locationManager = LocationManager()
 
   private let zoom: Float = 15.0
-
+  
   func makeUIViewController(context: Context) -> MapViewController {
       restaurantSearchViewModel.fetchGeocodes()
       locationManager.requestLocationPermissions()
