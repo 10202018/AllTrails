@@ -61,7 +61,9 @@ struct RestaurantSearchView: View {
           Button("Search") {
             if !searchText.isEmpty {
               self.rotationAngle += 180
-              restaurantSearchViewModel.fetchRestaurants(searchText)
+              Task {
+                await restaurantSearchViewModel.fetchRestaurants(searchText)
+              }
               animateRestaurantSearchCard(2.0)
             }
           }
@@ -98,8 +100,9 @@ struct RestaurantSearchView: View {
           }
           
         }
-        .onAppear(perform: {
-          restaurantSearchViewModel.fetchRestaurants(searchText)
+        .task({
+          guard restaurantSearchViewModel.places.isEmpty else { return }
+          await restaurantSearchViewModel.fetchRestaurants(searchText)
         })
         .toolbar {
           ToolbarItem(placement: .keyboard) {

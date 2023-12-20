@@ -2,7 +2,7 @@ import Foundation
 import GoogleMaps
 
 /// Presentation logic for the view of Restaurant search queries.
-final class RestaurantSearchViewModel: ObservableObject {
+@MainActor final class RestaurantSearchViewModel: ObservableObject {
   /// Change-announcing representation of single locations on the map.
   @Published var markers: [GMSMarker] = []
   @Published var places: [RestaurantSearchPlace] = []
@@ -11,7 +11,7 @@ final class RestaurantSearchViewModel: ObservableObject {
   /// Fetches list of restaurants via Google Places API.
   ///
   /// Parameter: - `textQuery` value passed from search text field
-  func fetchRestaurants(_ textQuery: String) {
+  func fetchRestaurants(_ textQuery: String) async {
     let baseUrl = "https://places.googleapis.com/v1/places:searchText"
     
     let requestBody = RestaurantSearchRequestBody(textQuery: textQuery)
@@ -40,72 +40,49 @@ final class RestaurantSearchViewModel: ObservableObject {
     )
     request.httpBody = jsonData
     
-    let restaurantSearchTask = URLSession.shared.dataTask(with: request) {
-        [weak self] data, response, error in
-      if let error = error {
-        print("Error: \(error)")
-        return
-      }
-      
-      guard let data = data else {
-        print("No data received")
-        return
-      }
-      
-      do {
-        let jsonDecoder = JSONDecoder()
-        let restaurantSearchResponse: RestaurantSearchResponse = try jsonDecoder.decode(RestaurantSearchResponse.self, from: data)
-        DispatchQueue.main.async {
-          self?.places = restaurantSearchResponse.places
-        }
-      } catch {
-        print("Error decoding JSON: \(error)")
-      }
+    do {
+      let (data, _) = try await URLSession.shared.data(for: request)
+      let restaurantSearchResponse = try JSONDecoder().decode(RestaurantSearchResponse.self, from: data)
+      self.places = restaurantSearchResponse.places
+    } catch {
+      print (error)
     }
-    restaurantSearchTask.resume()
+    
+    
   }
   
   /// Fetches forward-geocodes via call to Google Maps API.
-  func fetchGeocodes() {
+  func fetchGeocodes() async {
     for place in places {
       let geocodingURL = URL(string: "https://maps.googleapis.com/maps/api/geocode/json?address=\(place.formattedAddress)&key=\(apiKey)")!
       
-      let task = URLSession.shared.dataTask(with: geocodingURL) {
-          data, response, error in
-        if let error = error {
-          print("Error: \(error)")
+      do {
+        let (data, response) = try await URLSession.shared.data(from: geocodingURL)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
           return
         }
         
-        guard let data = data else {
-          print("No data received")
-          return
-        }
+        let geocodingResponse = try JSONDecoder().decode(GeocodingResponse.self, from: data)
         
-        do {
-          let jsonDecoder = JSONDecoder()
-          let geocodingResponse = 
-            try jsonDecoder.decode(GeocodingResponse.self, from: data)
-          
-          for result in geocodingResponse.results {
-            let coordinate = result.geometry.location
-            var updatedPlace = place
-            updatedPlace.latitude = coordinate.lat
-            updatedPlace.longitude = coordinate.lng
-            
-            DispatchQueue.main.async {
-              self.places = self.places.map { $0.formattedAddress == updatedPlace.formattedAddress ? updatedPlace : $0 }
-              self.updateMarkers(with: self.places)
-            }
+        for result in geocodingResponse.results {
+          let coordinate = result.geometry.location
+          var updatedPlace = place
+          updatedPlace.latitude = coordinate.lat
+          updatedPlace.longitude = coordinate.lng
+        
+          self.places = self.places.map {
+            $0.formattedAddress == updatedPlace.formattedAddress ? updatedPlace : $0
           }
-        } catch {
-          print("Error decoding JSON: \(error)")
+          
+          self.updateMarkers(with: self.places)
         }
+        
+      } catch {
+        print(error)
       }
-      
-      task.resume()
     }
   }
+  
   
   private func updateMarkers(with places: [RestaurantSearchPlace]) {
     var updatedMarkers = [GMSMarker]()
